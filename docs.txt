@@ -74,3 +74,9 @@ Node is more than V8 (adds more feature to JavaScript):
         (listen to requests coming to our own computer)
 
         - port numbers are like doors into a computer
+
+2. J. requests and responses:
+    To send a response back to the browser:
+        1) set the response headers
+        2) write the response content
+        3) end the response
