@@ -21,7 +21,7 @@ Node is more than V8 (adds more feature to JavaScript):
 
 2. Node basics:
     => global object: 
-        It's like the window object in the browser.
+        It's like the window object in the browser
 
     => import:
         To import something, we use require('./relative__path')
@@ -45,3 +45,15 @@ Node is more than V8 (adds more feature to JavaScript):
         *) mkdir / rmdir:
             - is an async fct
             - it takes the relative folder path and a callback fct
+
+    => streams and buffers:
+        If the data is very very huge, we dont use the regular fcts, it's better to use streams
+        With streams, we can use data before it's fully loaded
+
+        1) create a reading stream: fs.createReadStream('source_of_data_relative_path', { options })
+            create a writing stream: fs.createWriteStream('source_of_data_relative_path')
+        2) add event listener to the reading stream
+        3) fire a callback fct when there is a new chunk of data
+
+        piping:
+            from readSream directly to writeStream

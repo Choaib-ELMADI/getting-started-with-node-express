@@ -1,14 +1,14 @@
-//! Streams & Buffers
-// Streams start using data, before it has finished loading
 const fs = require('fs');
 
-const readStream  = fs.createReadStream('./docs/blog3.txt', { encoding: 'utf8' });
-const writeStream = fs.createWriteStream('./docs/blog4.txt');
+const readingStream = fs.createReadStream('./folder/blog1.txt', { encoding: 'utf8' });
+const writingStream = fs.createWriteStream('./folder/blog2.txt');
 
-// readStream.on('data', (chunk) => {
-//     writeStream.write('\n____New Chunk Of Data____\n');
-//     writeStream.write(chunk);
-// });
+readingStream.on('data', (chunk) => {
+    console.log('\n----- NEW CHUNK -----\n');
+    console.log(chunk);
+    
+    writingStream.write('\n----- NEW CHUNK -----\n');
+    writingStream.write(chunk);
+});
 
-//! Piping
-readStream.pipe(writeStream);
+readingStream.pipe(writingStream);
