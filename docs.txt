@@ -80,3 +80,6 @@ Node is more than V8 (adds more feature to JavaScript):
         1) set the response headers
         2) write the response content
         3) end the response
+
+        if we want to write one after anoter ==> res.write()...
+        else we pass the data to res.end(...)
