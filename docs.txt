@@ -85,6 +85,7 @@ Node is more than V8 (adds more feature to JavaScript):
         else we pass the data to res.end(...)
 
 3. Express:
+3. A. basics:
     1) create an instance of the express app
     2) make the listening
     3) listen to a request
@@ -95,3 +96,12 @@ Node is more than V8 (adds more feature to JavaScript):
     6) to redirect to the 404 page, we use the use function
         use function fires for every single request
         so, it must be at the bottom always
+
+3. B. view engines:
+    Or template engines, they are used to pass dynamic data and logic to the browser.
+
+    => after creating our app, we register the view engine.
+        So, express knows what creates the templates.
+    => the views (templates) by default are in the views folder.
+        If not, we should configure it.
+    => With view engines, we dont send files but we render a view.

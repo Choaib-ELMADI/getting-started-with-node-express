@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    
+    <div class="app-content new">
+        <h2>New Blog</h2>
+        <form>
+            <div class="input-group">
+                <label>Blog title:</label>
+                <input type="text" name="title" required autofocus>
+            </div>
+            <div class="input-group">
+                <label>Blog snippet:</label>
+                <input type="text" name="snippet" required>
+            </div>
+            <div class="input-group body">
+                <label>Blog body:</label>
+                <textarea rows="4" name="body" required></textarea>
+            </div>
+            <button type="submit">Add Post</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
