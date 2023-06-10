@@ -19,4 +19,5 @@ Node is more than V8 (adds more feature to JavaScript):
     *) Conect to a database
     *) Act as a server for content
 
-2. 
+2. The global object:
+    global => It's like the window object in the browser
