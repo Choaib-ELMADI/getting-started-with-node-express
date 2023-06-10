@@ -66,3 +66,11 @@ Node is more than V8 (adds more feature to JavaScript):
     IP addresses and domains: for each domain name we associate its own ip address
 
     GET Request ==>  send request to the server
+
+2. F. create a server:
+    localhost and port numbers:
+        - localhost is like a domain name in the web
+        - localhost ----> 127.0.0.1 ----> own computer
+        (listen to requests coming to our own computer)
+
+        - port numbers are like doors into a computer
