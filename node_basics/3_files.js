@@ -1,49 +1,48 @@
-//! Core Modules : File System
 const fs = require('fs');
 
-//* Reading files
-fs.readFile('./docs/blog1.txt', (err, data) => {
+fs.readFile('./folder/blog1.txt', (err, data) => {
     if (err) {
         console.log(err);
     }
     console.log(data.toString());
 });
 
-
-//* Writing files
-fs.writeFile('./docs/blog2.txt', 'Hello, World', () => {
+fs.writeFile('./folder/blog1.txt', 'Hello, Choaib', () => {
     console.log('File was written');
 });
 
-
-//* Directories
-if (!fs.existsSync('./assets')) {
-    fs.mkdir('./assets', (err) => {
+if (fs.existsSync('./folder/deleteme.txt')) {
+    fs.unlink('./folder/deleteme.txt', (err) => {
         if (err) {
             console.log(err);
         }
-        console.log('Folder was added');
-    });
+        console.log('File deleted');
+    })
 } else {
-    fs.rmdir('./assets', (err) => {
-        if (err) {
-            console.log(err);
-        }
-    });
-    console.log('Folder was deleted');
+    fs.writeFile('./folder/deleteme.txt', '', () => {
+        console.log('File created');
+    })
 }
 
+fs.mkdir('./folder/assets', (err) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log('Folder created');
+});
 
-//* Deleting files
-if (fs.existsSync('./docs/deleteme.txt')) {
-    fs.unlink('./docs/deleteme.txt', (err) => {
+if (!fs.existsSync('./folder/assets')) {
+    fs.mkdir('./folder/assets', (err) => {
         if (err) {
             console.log(err);
         }
-        console.log('File was deleted');
-    })
+        console.log('Folder created');
+    });
 } else {
-    fs.writeFile('./docs/deleteme.txt', '', () => {
-        console.log('File was added');
-    })
+    fs.rmdir('./folder/assets', (err) => {
+        if (err) {
+            console.log(err);
+        }
+    });
+    console.log('Folder deleted');
 }

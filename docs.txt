@@ -28,3 +28,20 @@ Node is more than V8 (adds more feature to JavaScript):
         When we require a file, we run it
         We dont have access to what we require, until we export it
         To export something, we use module.exports = { ... }
+
+    => file system:
+        *) readFile:
+            - is an async fct
+            - it takes the relative file path and a callback fct that returns a buffer
+
+        *) writeFile:
+            - is an async fct
+            - it takes the relative file path, data to write and a callback fct
+
+        *) unlink: (Delete file)
+            - is an async fct
+            - it takes the relative file path and a callback fct
+
+        *) mkdir / rmdir:
+            - is an async fct
+            - it takes the relative folder path and a callback fct
