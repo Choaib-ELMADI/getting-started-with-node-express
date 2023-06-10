@@ -20,40 +20,49 @@ Node is more than V8 (adds more feature to JavaScript):
     *) Act as a server for content
 
 2. Node basics:
-    => global object: 
-        It's like the window object in the browser
+2. A. global object: 
+    It's like the window object in the browser
 
-    => import:
-        To import something, we use require('./relative__path')
-        When we require a file, we run it
-        We dont have access to what we require, until we export it
-        To export something, we use module.exports = { ... }
+2. B. import:
+    To import something, we use require('./relative__path')
+    When we require a file, we run it
+    We dont have access to what we require, until we export it
+    To export something, we use module.exports = { ... }
 
-    => file system:
-        *) readFile:
-            - is an async fct
-            - it takes the relative file path and a callback fct that returns a buffer
+2. C. file system:
+    *) readFile:
+        - is an async fct
+        - it takes the relative file path and a callback fct that returns a buffer
 
-        *) writeFile:
-            - is an async fct
-            - it takes the relative file path, data to write and a callback fct
+    *) writeFile:
+        - is an async fct
+        - it takes the relative file path, data to write and a callback fct
 
-        *) unlink: (Delete file)
-            - is an async fct
-            - it takes the relative file path and a callback fct
+    *) unlink: (Delete file)
+        - is an async fct
+        - it takes the relative file path and a callback fct
 
-        *) mkdir / rmdir:
-            - is an async fct
-            - it takes the relative folder path and a callback fct
+    *) mkdir / rmdir:
+        - is an async fct
+        - it takes the relative folder path and a callback fct
 
-    => streams and buffers:
-        If the data is very very huge, we dont use the regular fcts, it's better to use streams
-        With streams, we can use data before it's fully loaded
+2. D. streams and buffers:
+    If the data is very very huge, we dont use the regular fcts, it's better to use streams
+    With streams, we can use data before it's fully loaded
 
-        1) create a reading stream: fs.createReadStream('source_of_data_relative_path', { options })
-            create a writing stream: fs.createWriteStream('source_of_data_relative_path')
-        2) add event listener to the reading stream
-        3) fire a callback fct when there is a new chunk of data
+    1) create a reading stream: fs.createReadStream('source_of_data_relative_path', { options })
+        create a writing stream: fs.createWriteStream('source_of_data_relative_path')
+    2) add event listener to the reading stream
+    3) fire a callback fct when there is a new chunk of data
 
-        piping:
-            from readSream directly to writeStream
+    piping:
+        from readSream directly to writeStream
+
+2. E. clients and servers:
+    */ The server is always listening for request.
+    */ When we type a website, the browser sends a request to the server. The server then decides what
+        to send back as a response.
+
+    IP addresses and domains: for each domain name we associate its own ip address
+
+    GET Request ==>  send request to the server
