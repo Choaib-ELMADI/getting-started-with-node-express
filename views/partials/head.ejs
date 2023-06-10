@@ -36,8 +36,10 @@
         nav {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: end;
             padding: 0 .5rem;
+            padding-bottom: .25rem;
+            border-bottom: 1px solid var(--black__trs);
 
             margin-bottom: 2rem;
         }
@@ -49,9 +51,11 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         nav ul li a {
+            color: var(--black);
+            text-decoration: none;
             transition: .2s;
         }
         nav ul li a:is(:hover) {
