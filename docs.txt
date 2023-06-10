@@ -89,3 +89,9 @@ Node is more than V8 (adds more feature to JavaScript):
     2) make the listening
     3) listen to a request
     4) send a response: express automatically add content-type and status-code
+
+    5) to send a page, we pass its relative path and the root to res.sendFile()
+
+    6) to redirect to the 404 page, we use the use function
+        use function fires for every single request
+        so, it must be at the bottom always
