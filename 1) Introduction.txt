@@ -1,0 +1,22 @@
+1. What is Node.js?
+                =
+                =
+====================================================================
+=                                                                  =
+=                                                                  = 
+Front-end(Browser)                                                 Back-end(Server)
+JavaScript is normally confined to run                             Node allows us to run JavaScript on the server side
+in a browser in the past on the frontend                           as well or even directly on computers.
+(add interactivity to a web page).
+
+We can't directly run JavaScript on a computer, but it can run inside a browser, So how does that work?
+Running inside browsers is an engine called V8 engine (C++ by Google) and it compiles JavaScript into
+machine code at runtime.
+
+Node.js is a program also written in C++ and that wraps the V8 engine.
+Node is more than V8 (adds more feature to JavaScript):
+    *) Read & Write files on a computer
+    *) Conect to a database
+    *) Act as a server for content
+
+2. 
