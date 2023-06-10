@@ -83,3 +83,9 @@ Node is more than V8 (adds more feature to JavaScript):
 
         if we want to write one after anoter ==> res.write()...
         else we pass the data to res.end(...)
+
+3. Express:
+    1) create an instance of the express app
+    2) make the listening
+    3) listen to a request
+    4) send a response: express automatically add content-type and status-code
