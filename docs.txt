@@ -19,5 +19,12 @@ Node is more than V8 (adds more feature to JavaScript):
     *) Conect to a database
     *) Act as a server for content
 
-2. The global object:
-    global => It's like the window object in the browser
+2. Node basics:
+    => global object: 
+        It's like the window object in the browser.
+
+    => import:
+        To import something, we use require('./relative__path')
+        When we require a file, we run it
+        We dont have access to what we require, until we export it
+        To export something, we use module.exports = { ... }
