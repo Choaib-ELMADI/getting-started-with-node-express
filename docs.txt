@@ -94,7 +94,7 @@ Node is more than V8 (adds more feature to JavaScript):
     5) to send a page, we pass its relative path and the root to res.sendFile()
 
     6) to redirect to the 404 page, we use the use function
-        use function fires for every single request
+        use function fires for every single request while the response has not been sent
         so, it must be at the bottom always
 
 3. B. view engines:
@@ -105,3 +105,9 @@ Node is more than V8 (adds more feature to JavaScript):
     => the views (templates) by default are in the views folder.
         If not, we should configure it.
     => With view engines, we dont send files but we render a view.
+
+    => Middleware: code which runs (on the server) between getting a request and sending a response.
+        The functions in the get handlers and use fct are middlewares.
+        next fct tells the middleware to carry on the next block of code.
+
+        Middlewares are used also to pass static files like css and images.
