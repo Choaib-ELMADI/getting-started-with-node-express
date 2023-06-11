@@ -129,3 +129,11 @@ Node is more than V8 (adds more feature to JavaScript):
     POST    => requests to create a new data
     DELETE  => requests to delete data
     PUT     => requests to update data
+
+6. Express Router & MVC:
+    => MVC: 
+        stands for Model, View Controller
+        a way of structuring our code and files
+
+        Controller is the link between the Model and the View
+        it takes data from the model and pass it to the view
