@@ -34,8 +34,12 @@ app.get('/blogs', (req, res) => {
 app.post('/blogs', (req, res) => {
     const blog = new Blog(req.body);
     blog.save()
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/blogs'))
         .catch((err) => console.error(err));
+});
+
+app.get('/blogs/new', (req, res) => {
+    res.render('new', { title: 'New' });
 });
 
 app.get('/blogs/:id', (req, res) => {
@@ -47,10 +51,6 @@ app.delete('/blogs/:id', (req, res) => {
     Blog.findByIdAndDelete(req.params.id)
         .then(() => res.json({ redirect: '/blogs' }))
         .catch((err) => console.error(err));
-});
-
-app.get('/blogs/new', (req, res) => {
-    res.render('new', { title: 'New' });
 });
 
 app.use((req, res) => {
