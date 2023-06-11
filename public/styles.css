@@ -1,5 +1,6 @@
 :root {
     --brand:        orangered;
+    --brand__trs:   rgba(255, 68, 0, .2);
     --black:        #000;
     --black__trs:   rgba(0, 0, 0, .55);
     --white:        #d1d1d1;
@@ -116,6 +117,7 @@ footer {
     font-size: 20px;
     margin: 0;
     margin-bottom: .25rem;
+    color: var(--black);
 }
 .blogs .blog p {
     color: var(--white);
@@ -164,6 +166,36 @@ footer {
 }
 .new form button:hover {
     color: var(--brand);
+}
+
+.single-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 .5rem;
+}
+.single-blog h1 {
+    background: var(--brand__trs);
+    width: max-content;
+    padding: .5rem;
+    border-bottom: .3rem solid var(--brand);
+    border-radius: 12px;
+}
+.single-blog .delete {
+    padding: .5rem 1.5rem;
+    color: var(--black);
+    border: 1.5px solid currentColor;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: .2s;
+    width: max-content;
+    cursor: pointer;
+    text-decoration: none;
+}
+.single-blog .delete:hover {
+    color: var(--brand);
+    background: var(--brand__trs);
 }
 
 @media screen and (width <= 700px) {

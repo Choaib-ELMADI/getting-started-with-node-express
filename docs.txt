@@ -123,3 +123,9 @@ Node is more than V8 (adds more feature to JavaScript):
         Schemas and Models:
             */Schemas defines the structure of a type of data / document.
             */Models allows us to communicate with database collections, it surrounds the Schema.
+
+5. Requests:
+    GET     => requests to get a resource
+    POST    => requests to create a new data
+    DELETE  => requests to delete data
+    PUT     => requests to update data

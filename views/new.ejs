@@ -6,7 +6,7 @@
     
     <div class="app-content new">
         <h2>New Blog</h2>
-        <form>
+        <form action="/blogs" method="POST">
             <div class="input-group">
                 <label>Blog title:</label>
                 <input type="text" name="title" required autofocus>
@@ -17,9 +17,9 @@
             </div>
             <div class="input-group body">
                 <label>Blog body:</label>
-                <textarea rows="4" name="body" required></textarea>
+                <textarea style="resize: none;" rows="8" name="body" required></textarea>
             </div>
-            <button type="submit">Add Post</button>
+            <button type="submit">Add Blog</button>
         </form>
     </div>
 

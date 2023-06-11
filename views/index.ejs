@@ -11,10 +11,12 @@
             <h2>All Blogs</h2>
             <div class="blogs-container">
                 <% blogs.forEach(blog => { %>
-                    <div class="blog">
-                        <h3 class="title"><%= blog.title %></h3>
-                        <p class="snippet"><%= blog.snippet %></p>
-                    </div>
+                    <a href="/blogs/<%= blog._id %>" style="text-decoration: none;">
+                        <div class="blog">
+                            <h3 class="title"><%= blog.title %></h3>
+                            <p class="snippet"><%= blog.snippet %></p>
+                        </div>
+                    </a>
                 <% }) %>
             </div>
         <% } %>
