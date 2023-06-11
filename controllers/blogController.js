@@ -24,7 +24,7 @@ const blog_new_get = (req, res) => {
 const blog_single = (req, res) => {
     Blog.findById(req.params.id)
         .then((blog) => res.render('blog', { title: 'Blog', blog }))
-        .catch((err) => console.error(err));
+        .catch(() => res.status(404).render('404', { title: '404' }));
 };
 
 const blog_delete = (req, res) => {
