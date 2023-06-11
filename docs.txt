@@ -111,3 +111,15 @@ Node is more than V8 (adds more feature to JavaScript):
         next fct tells the middleware to carry on the next block of code.
 
         Middlewares are used also to pass static files like css and images.
+
+4. mongoDB NoSQL:
+    SQL   ==> uses tables, rows and columns to store data.
+    NoSQL ==> uses collections and documents to store data.
+
+    Mongoose:
+        Mongoose is an ODM library (Object Document Mapping)
+        It wraps the standard mongoDB API and provides us with an easier way to connect and communicate.
+
+        Schemas and Models:
+            */Schemas defines the structure of a type of data / document.
+            */Models allows us to communicate with database collections, it surrounds the Schema.

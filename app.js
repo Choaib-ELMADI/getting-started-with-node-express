@@ -1,35 +1,34 @@
 const express = require('express');
-const morgan = require('morgan');
+const mongoose = require('mongoose');
+const Blog = require('./models/blog');
 
 const app = express();
+
+const dbURI = 'mongodb+srv://choaibelmadi:choaibelmadi@nodeblogs.to9a9ov.mongodb.net/nodeBlogs';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => app.listen(3000))
+    .catch(() => console.log('Error'));
+
 app.set('view engine', 'ejs');
-app.listen(3000);
-
-app.use((req, res, next) => {
-    console.log('A new request was made:');
-    console.log('Host: ', req.hostname);
-    console.log('Path: ', req.path);
-    console.log('Method: ', req.method);
-
-    next();
-});
-
-app.use(morgan('dev'));
 
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    const blogs = [
-        { title: 'Lorem ipsum dolor', snippet: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cum!' },        
-        { title: 'Sit amet consectetur', snippet: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cum!' },        
-        { title: 'Adipisicing elit', snippet: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cum!' },        
-    ];
-
-    res.render('index', { title: 'Home', blogs });
+    res.redirect('/blogs');
 });
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About' });
+});
+
+app.get('/blogs', (req, res) => {
+    Blog.find().sort({ createdAt: -1 })
+        .then((blogs) => {
+            res.render('index', { title: 'All Blogs', blogs });
+        })
+        .catch((err) => {
+            console.error(err);
+        })
 });
 
 app.get('/blogs/new', (req, res) => {
